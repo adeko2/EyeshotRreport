@@ -11,4 +11,5 @@ We (Adeko Technologies) have observed an abnormal behaviour during loading an en
 We have two files in the project. One is the porblematic version of the same entity while the other one opens correctly. To load the erronious block use `LeftCtrl+E` and use `LeftCtrl+W` for the working 
 
 The problematic entity is produced only if the process is started in ContentRendered event.
+
 ![image](https://github.com/user-attachments/assets/86456c87-1f48-4ca4-bc33-850154e94445)
