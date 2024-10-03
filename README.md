@@ -7,7 +7,7 @@
 We have observed an abnormal behaviour during loading an entity produced from a dwg source.
 
 - The app seems to be stuck in an infinite loop inside `design1.Entities.Add(blockReference)`
-- The app continues to allocate memory with a high speed without slowing down. During our test case we reached 14 GB of memory.
+- The app continues to allocate memory at a high rate without slowing down. During our test case we reached 14 GB of memory.
 
 We have two files in the reproduction sample. One is the problematic version of the same entity while the other one works correctly. To load the erronious block use `LeftCtrl+E` and use `LeftCtrl+W` for the working 
 
