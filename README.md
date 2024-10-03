@@ -3,6 +3,7 @@
 ## 1. Issue - Loading an entity takes an enormous amount of time and allocates GBs of memory.
 
 [project](https://github.com/adeko2/EyeshotRreport/tree/master/EyeshotReport)
+
 We have observed an abnormal behaviour during loading an entity produced from a dwg source.
 
 - The app seems to be stuck in an infinite loop inside `design1.Entities.Add(blockReference)`
