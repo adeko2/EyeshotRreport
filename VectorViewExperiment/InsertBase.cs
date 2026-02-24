@@ -53,7 +53,7 @@ public class InsertBase : BlockReference, ISerializable
         insert.Pose = Pose;
     }
 
-    public override EntitySurrogate ConvertToSurrogate()
+    public new InsertBaseSurrogate ConvertToSurrogate()
     {
         return new InsertBaseSurrogate(this);
     }
