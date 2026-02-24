@@ -8,7 +8,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TabControl>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TabControl Grid.Column="0">
             <TabItem Header="Design">
                 <ddes:Design x:Name="design1">
                     <ddes:Design.Viewports>
@@ -49,5 +53,10 @@
                 <ddes:Drawing x:Name="drawing1"/>
             </TabItem>
         </TabControl>
+        <ScrollViewer Grid.Column="1">
+            <StackPanel>
+                <TextBox AcceptsReturn="True" Text="{Binding Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Window>
