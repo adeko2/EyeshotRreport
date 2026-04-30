@@ -1,6 +1,7 @@
 ﻿using CabinCAD.Layout;
 using devDept.Eyeshot;
 using devDept.Eyeshot.Control;
+using devDept.Eyeshot.Control.Labels;
 using devDept.Eyeshot.Entities;
 using devDept.Geometry;
 using devDept.Geometry.ConstraintSolver;
@@ -24,7 +25,7 @@ namespace DrawingRequiresVectorView;
 public partial class MainWindow : Window, INotifyPropertyChanged
 {
     public string _text = string.Empty;
-    public string Text
+    public string LabelText
     {
         get => _text;
         set
@@ -68,13 +69,14 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     {
         base.OnContentRendered(e);
         //LoadFile();
+        //design1.Refresh();
         LoadBoxes();
     }
 
 
     public BlockReference? GetView(Block block)
     {
-        _view = new(0, -tH / 2, Text, tW, 2, 2.5)
+        _view = new(0, -tH / 2, LabelText, tW, 2, 2.5)
         {
             RectHeight = tH,
             Wrap = true,
@@ -112,16 +114,24 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     private void LoadBoxes()
     {
         var box = Brep.CreateBox(10, 10, 10, 10);
-
+        Text txt = new Text(Point3D.Origin, "1", 10, Text.alignmentType.MiddleCenter)
+        {
+            Billboard = true
+        };
+        LeaderAndText lbl = new(Point3D.Origin, "2", new Font("Arial", 10), Color.Black, 100, 100);
         WireBox wb = new(0, 0, 0, 20, 20, 20);
         Block b1 = new("b1");
         b1.Entities.Add(wb);
-        b1.Entities.Add(box);
+        b1.Entities.Add(box, Color.Green);
+        b1.Entities.Add(txt, Color.Blue);
         InsertBase b1Ins = new(b1.Name, 1);
         design1.Blocks.Add(b1);
         design1.Entities.Add(b1Ins, Color.Red);
-        design1.ActiveViewport.DisplayMode = displayType.Wireframe;
+        design1.Labels.Add(lbl);
+        design1.ActiveViewport.DisplayMode = displayType.Shaded;
+        design1.ActiveViewport.Rotate.RotationMode = rotationType.Turntable;
         design1.Refresh();
+
 
         Table table = new(Plane.XY, 2, 2, 10, 20, 2, Table.flowDirection.Down);
         var tableBlock = new Block("tableBlock");
@@ -137,7 +147,6 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         BlockReference br = SheetBlockReference.GetSheetBlock(size, "blabla", out blockA4);
         drawing1.Sheets.Add(sheet1);
         drawing1.Blocks.Add(blockA4);
-
         sheet1.Entities.Add(br);
 
         if (tBR is not null)

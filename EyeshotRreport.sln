@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VectorViewExperiment", "VectorViewExperiment\VectorViewExperiment.csproj", "{2596EABD-AC7E-B1BF-9AA8-5E3EE030D189}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeshotTableOutput", "EyeshotTableOutput\EyeshotTableOutput.csproj", "{3EA5F504-0686-49B1-8826-D53085A25630}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{2596EABD-AC7E-B1BF-9AA8-5E3EE030D189}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2596EABD-AC7E-B1BF-9AA8-5E3EE030D189}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2596EABD-AC7E-B1BF-9AA8-5E3EE030D189}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EA5F504-0686-49B1-8826-D53085A25630}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EA5F504-0686-49B1-8826-D53085A25630}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EA5F504-0686-49B1-8826-D53085A25630}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EA5F504-0686-49B1-8826-D53085A25630}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

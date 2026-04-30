@@ -1,17 +1,18 @@
-﻿<Window x:Class="DrawingRequiresVectorView.MainWindow"
+﻿<Window x:Class="EyeshotTableOutput.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:ddes="http://schemas.devdept.com/winfx/2008/xaml/control"
+        xmlns:local="clr-namespace:EyeshotTableOutput"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+xmlns:ddes="http://schemas.devdept.com/winfx/2008/xaml/control"
+Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="4*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <TabControl Grid.Column="0">
+        <TabControl x:Name="tabControl" Grid.Column="0">
             <TabItem Header="Design">
                 <ddes:Design x:Name="design1">
                     <ddes:Design.Viewports>
@@ -48,13 +49,16 @@
                     </ddes:Design.Viewports>
                 </ddes:Design>
             </TabItem>
-            <TabItem Header="Drawing">
+            <TabItem Header="Drawing" Selector.IsSelected="True">
                 <ddes:Drawing x:Name="drawing1"/>
             </TabItem>
         </TabControl>
         <ScrollViewer Grid.Column="1">
             <StackPanel>
-                <TextBox AcceptsReturn="True" Text="{Binding Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                <Label Content="Controls"/>
+                <Button x:Name="btnDrawTable" Content="Draw Table" Click="ButtonDrawTable_Click" Margin="4"/>
+                <Button x:Name="btnPrintPreview" Content="Print Preview" Click="btnPrintPreview_Click" Margin="4"/>
+                <Button x:Name="btnPrint" Content="Print" Click="btnPrint_Click" Margin="4"/>
             </StackPanel>
         </ScrollViewer>
     </Grid>
