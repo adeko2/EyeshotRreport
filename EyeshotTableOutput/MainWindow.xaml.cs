@@ -51,6 +51,11 @@ public partial class MainWindow : Window
         drawing1.Print(true);
     }
 
+    private void btnPageSetup_Click(object sender, RoutedEventArgs e)
+    {
+        drawing1.PageSetup(true);
+    }
+
     private Sheet AddNewDrawingSheet()
     {
         drawing1.ActiveSheet = null;
@@ -58,6 +63,7 @@ public partial class MainWindow : Window
         var size = IsoPageSize.By(SheetFormat.A4_ISO);
         var sheet = new Sheet(linearUnitsType.Millimeters, size.Width, size.Height, "Sheet 1", angleProjectionType.FirstAngle);
         Block blockA4;
+        //BlockReference br = sheet.BuildA4ISO(out blockA4, null);
         BlockReference br = SheetBlockReference.GetSheetBlock(size, "blabla", out blockA4);
         drawing1.Sheets.Add(sheet);
         drawing1.Blocks.Add(blockA4);

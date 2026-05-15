@@ -59,6 +59,8 @@ Title="MainWindow" Height="450" Width="800">
                 <Button x:Name="btnDrawTable" Content="Draw Table" Click="ButtonDrawTable_Click" Margin="4"/>
                 <Button x:Name="btnPrintPreview" Content="Print Preview" Click="btnPrintPreview_Click" Margin="4"/>
                 <Button x:Name="btnPrint" Content="Print" Click="btnPrint_Click" Margin="4"/>
+                
+                <Button x:Name="btnPageSetup" Content="Page Setup" Click="btnPageSetup_Click" Margin="4"/>
             </StackPanel>
         </ScrollViewer>
     </Grid>

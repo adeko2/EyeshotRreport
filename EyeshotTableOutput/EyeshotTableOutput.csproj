@@ -9,9 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="devDept.Eyeshot" Version="2025.3.543-nightly" />
-    <PackageReference Include="devDept.Eyeshot.Control.Wpf" Version="2025.3.543-nightly" />
-    <PackageReference Include="devDept.Eyeshot.x64" Version="2025.3.543-nightly" />
+    <PackageReference Include="devDept.Eyeshot" Version="2026.1.260-nightly" />
+    <PackageReference Include="devDept.Eyeshot.Control.Wpf" Version="2026.1.260-nightly" />
+    <PackageReference Include="devDept.Eyeshot.x64" Version="2026.1.260-nightly" />
   </ItemGroup>
 
 </Project>
